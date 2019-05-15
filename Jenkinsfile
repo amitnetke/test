@@ -4,9 +4,6 @@ pipeline {
     }
 	stages {
 		stage('checkout') {
-			when{
-				branch 'master'
-			}
 			steps {
 				echo 'checkout'
 			}
@@ -14,6 +11,7 @@ pipeline {
 		stage('Build') {
 			when{
 				branch 'master'
+				branch 'test*'
 			}
 			steps {
 				echo 'Build'
