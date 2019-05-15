@@ -10,9 +10,9 @@ pipeline {
 		}
 		stage('Build') {
 			expression {
-				return env.BRANCH_NAME != 'tset*';
+				return env.BRANCH_NAME != 't';
 					}
-				}
+				
 			steps {
 				echo 'Build'
 			}
