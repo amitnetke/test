@@ -18,5 +18,15 @@ pipeline {
 				echo 'test'
 			}
 		}
+		stage('Sonar') {
+			steps {
+				echo 'Sonar'
+			}
+		}
+		stage('Deployement') {
+			steps {
+				echo 'Deployement'
+			}
+		}
 	}
 }
