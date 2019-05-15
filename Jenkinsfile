@@ -9,16 +9,25 @@ pipeline {
 			}
 		}
 		stage('Build') {
+			when{
+				branch 'master'
+			}
 			steps {
 				echo 'Build'
 			}
 		}
 		stage('Test') {
+			when{
+				branch 'master'
+			}
 			steps {
 				echo 'test'
 			}
 		}
 		stage('Sonar') {
+			when{
+				branch 'master'
+			}
 			steps {
 				echo 'Sonar'
 			}
