@@ -3,7 +3,7 @@ pipeline {
         label 'master'
     }
 	stages {
-		stage('checkout') {
+		stage('checkout.') {
 			steps {
 				echo 'checkout'
 			}
