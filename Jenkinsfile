@@ -30,9 +30,7 @@ pipeline {
 		}
 		stage('Sonar') {
 			when{
-				expression {
-					return env.BRANCH_NAME = 'test*';
-				}
+				branch 'test*'
 			}
 			steps {
 				echo 'Sonar'
