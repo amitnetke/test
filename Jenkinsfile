@@ -4,9 +4,6 @@ pipeline {
     }
 	stages {
 		stage('checkout') {
-			when{
-				branch 'master'
-			}
 			steps {
 				echo 'checkout'
 			}
