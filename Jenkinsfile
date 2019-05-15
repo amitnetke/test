@@ -11,6 +11,7 @@ pipeline {
 		stage('Build') {
 			when{
 				branch 'master'
+				branch 'test*'
 			}
 			steps {
 				echo 'Build'
