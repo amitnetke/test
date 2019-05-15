@@ -14,14 +14,15 @@ pipeline {
 					return env.BRANCH_NAME != 'master';
 				}
 			}
-				
 			steps {
 				echo 'Build'
 			}
 		}
 		stage('Test') {
 			when{
-				branch 'master'
+				expression {
+					return env.BRANCH_NAME != 'master';
+				}
 			}
 			steps {
 				echo 'test'
@@ -29,7 +30,9 @@ pipeline {
 		}
 		stage('Sonar') {
 			when{
-				branch 'master'
+				expression {
+					return env.BRANCH_NAME == 'test*';
+				}
 			}
 			steps {
 				echo 'Sonar'
@@ -37,7 +40,9 @@ pipeline {
 		}
 		stage('Deployement') {
 			when{
-				branch 'dev'
+				expression {
+					return env.BRANCH_NAME != 'test*';
+				}
 			}
 			steps {
 				echo 'Deployement'
