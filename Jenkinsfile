@@ -36,7 +36,7 @@ pipeline {
 				echo 'Sonar'
 			}
 		}
-		stage('Deployement') {
+		stage('Deployement.') {
 			when{
 				expression {
 					return env.BRANCH_NAME != 'test*';
