@@ -3,9 +3,9 @@ pipeline {
         label 'master'
     }
 	stages {
-		stage('checkout') {
+		stage('checkout.') {
 			steps {
-				echo 'checkout..'
+				echo 'checkout'
 			}
 		}
 		stage('Build') {
@@ -30,18 +30,17 @@ pipeline {
 		}
 		stage('Sonar') {
 			when{
-				expression {
-					return env.BRANCH_NAME == 'test*';
-				}
+				branch 'test*'
 			}
 			steps {
 				echo 'Sonar'
 			}
 		}
+		
 		stage('Deployement') {
 			when{
 				expression {
-					return env.BRANCH_NAME != 'test*';
+					return (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'dev');
 				}
 			}
 			steps {
