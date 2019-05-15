@@ -5,13 +5,16 @@ pipeline {
 	stages {
 		stage('checkout') {
 			steps {
-				echo 'checkout'
+				echo 'checkout..'
 			}
 		}
 		stage('Build') {
 			when{
-				branch 'test*' && 'master'
+				 expression {
+					return env.BRANCH_NAME != 'master';
+				}
 			}
+				
 			steps {
 				echo 'Build'
 			}
