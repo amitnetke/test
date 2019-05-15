@@ -4,6 +4,9 @@ pipeline {
     }
 	stages {
 		stage('checkout') {
+			when{
+				branch 'master'
+			}
 			steps {
 				echo 'checkout'
 			}
@@ -33,6 +36,9 @@ pipeline {
 			}
 		}
 		stage('Deployement') {
+			when{
+				branch 'dev'
+			}
 			steps {
 				echo 'Deployement'
 			}
