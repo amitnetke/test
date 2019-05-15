@@ -10,7 +10,7 @@ pipeline {
 		}
 		stage('Build') {
 			when{
-				branch == 'master'
+				branch ('master' || 'testD1')
 			}
 				
 			steps {
