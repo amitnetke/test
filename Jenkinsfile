@@ -9,9 +9,9 @@ pipeline {
 			}
 		}
 		stage('Build') {
-			expression {
-				return env.BRANCH_NAME != 'testD1';
-					}
+			when{
+				branch == 'master'
+			}
 				
 			steps {
 				echo 'Build'
