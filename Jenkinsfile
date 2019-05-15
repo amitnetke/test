@@ -10,7 +10,9 @@ pipeline {
 		}
 		stage('Build') {
 			when{
-				branch ('master' || 'testD1')
+				 expression {
+					return env.BRANCH_NAME != 'master';
+				}
 			}
 				
 			steps {
