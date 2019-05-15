@@ -10,7 +10,7 @@ pipeline {
 		}
 		stage('Build') {
 			when{
-				branch 'test*' && 'master'
+				branch 'test*' || 'master'
 			}
 			steps {
 				echo 'Build'
