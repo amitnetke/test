@@ -39,7 +39,7 @@ pipeline {
 		stage('Deployement.') {
 			when{
 				expression {
-					return env.BRANCH_NAME != 'testD1';
+					return env.BRANCH_NAME == 'master' || 'dev';
 				}
 			}
 			steps {
