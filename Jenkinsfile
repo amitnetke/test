@@ -36,10 +36,11 @@ pipeline {
 				echo 'Sonar'
 			}
 		}
+		
 		stage('Deployement') {
 			when{
 				expression {
-					return (env.BRANCH_NAME == 'master' || 'dev');
+					return (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'dev');
 				}
 			}
 			steps {
