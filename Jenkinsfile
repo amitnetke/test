@@ -10,7 +10,7 @@ pipeline {
 		}
 		stage('Build') {
 			expression {
-				return env.BRANCH_NAME != 't';
+				return env.BRANCH_NAME != 'testD1';
 					}
 				
 			steps {
